@@ -9,12 +9,16 @@
 + (FCMPlugin *) fcmPlugin;
 - (void)ready:(CDVInvokedUrlCommand*)command;
 - (void)getToken:(CDVInvokedUrlCommand*)command;
-- (void)subscribeToTopic:(CDVInvokedUrlCommand*)command;
-- (void)unsubscribeFromTopic:(CDVInvokedUrlCommand*)command;
-- (void)registerNotification:(CDVInvokedUrlCommand*)command;
+- (void)subscribe:(CDVInvokedUrlCommand*)command;
+- (void)unsubscribe:(CDVInvokedUrlCommand*)command;
+- (void)unregister:(CDVInvokedUrlCommand*)command;
+- (void)onNotificationOpen:(CDVInvokedUrlCommand*)command;
+- (void)grantPermission:(CDVInvokedUrlCommand*)command;
+- (void)hasPermission:(CDVInvokedUrlCommand*)command;
 - (void)notifyOfMessage:(NSData*) payload;
 - (void)notifyOfTokenRefresh:(NSString*) token;
-- (void)appEnterBackground;
-- (void)appEnterForeground;
+- (void)clearAllNotifications:(CDVInvokedUrlCommand *)command;
+
+//#define AppDelegateSingleton ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 @end
